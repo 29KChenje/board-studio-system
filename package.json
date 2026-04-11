@@ -1,0 +1,20 @@
+{
+  "name": "board-studio-system",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace server",
+    "dev:server": "npm run dev --workspace server",
+    "dev:client": "npm run dev --workspace client",
+    "start": "npm run start --workspace server",
+    "build:client": "npm run build --workspace client",
+    "build:app": "npm run build --workspace client",
+    "start:app": "npm run start --workspace server",
+    "build": "npm run build --workspace client",
+    "test:server": "npm run test --workspace server"
+  }
+}
