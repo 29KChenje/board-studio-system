@@ -1,0 +1,1 @@
+import{c as e}from"./react-vendor-DII6azQf.js";var t=e(),n=({label:e,value:n,hint:r})=>(0,t.jsxs)(`article`,{className:`stat-card`,children:[(0,t.jsx)(`span`,{className:`muted`,children:e}),(0,t.jsx)(`strong`,{children:n}),(0,t.jsx)(`small`,{children:r})]});export{n as t};

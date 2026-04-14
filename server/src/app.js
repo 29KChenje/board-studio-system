@@ -23,11 +23,54 @@ const currentDirectory = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(currentDirectory, "..", "..");
 const clientDistDirectory = path.resolve(projectRoot, "client", "dist");
 const clientIndexFile = path.join(clientDistDirectory, "index.html");
-const hasBuiltClient = fs.existsSync(clientIndexFile);
+const allowedOrigins = Array.from(
+  new Set(
+    [
+      env.clientUrl,
+      "http://localhost:5173",
+      "http://127.0.0.1:5173",
+      "http://localhost:5175",
+      "http://127.0.0.1:5175",
+      "http://localhost:4173",
+      "http://127.0.0.1:4173"
+    ].filter(Boolean)
+  )
+);
+
+const isAllowedOrigin = (origin) => {
+  if (!origin || allowedOrigins.includes(origin)) {
+    return true;
+  }
+
+  try {
+    const { hostname, protocol } = new URL(origin);
+    if (!["http:", "https:"].includes(protocol)) {
+      return false;
+    }
+
+    return (
+      hostname === "localhost" ||
+      hostname === "127.0.0.1" ||
+      hostname === "::1" ||
+      /^192\.168\.\d{1,3}\.\d{1,3}$/.test(hostname) ||
+      /^10\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(hostname) ||
+      /^172\.(1[6-9]|2\d|3[0-1])\.\d{1,3}\.\d{1,3}$/.test(hostname)
+    );
+  } catch {
+    return false;
+  }
+};
 
 app.use(
   cors({
-    origin: true,
+    origin(origin, callback) {
+      if (isAllowedOrigin(origin)) {
+        callback(null, true);
+        return;
+      }
+
+      callback(new Error(`CORS blocked for origin: ${origin}`));
+    },
     credentials: true
   })
 );

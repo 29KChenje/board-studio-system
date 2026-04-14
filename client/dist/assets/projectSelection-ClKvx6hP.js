@@ -1,0 +1,1 @@
+var e=`board_studio_selected_project_id`,t=()=>localStorage.getItem(e)||``,n=t=>{if(t){localStorage.setItem(e,String(t));return}localStorage.removeItem(e)},r=(e,t)=>{if(!e.length)return``;let n=t?String(t):``;return n&&e.some(e=>String(e.id)===n)?n:String(e[0].id)};export{n,r,t};

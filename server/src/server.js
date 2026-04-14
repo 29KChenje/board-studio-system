@@ -1,5 +1,3 @@
-// server/src/server.js
-// Entry point for the Board Studio API server.
 import { db } from "./config/db.js";
 import { ensureDemoData } from "./bootstrap/ensureDemoData.js";
 import { env } from "./config/env.js";
