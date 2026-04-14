@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f7f4ef" />
+      <stop offset="100%" stop-color="#d7c7b7" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="520" fill="url(#bg)" />
+  <rect x="86" y="88" width="628" height="344" rx="40" fill="#fffaf4" opacity="0.95" />
+  <rect x="178" y="148" width="140" height="192" rx="18" fill="#f3ede3" stroke="#ccb8a0" stroke-width="6" />
+  <rect x="334" y="178" width="116" height="160" rx="18" fill="#e5dbc8" stroke="#bfa888" stroke-width="6" />
+  <rect x="470" y="128" width="150" height="220" rx="18" fill="#d4b088" stroke="#a97c50" stroke-width="6" />
+  <rect x="210" y="176" width="76" height="18" rx="9" fill="#dac7a7" />
+  <rect x="364" y="208" width="56" height="18" rx="9" fill="#cab695" />
+  <rect x="504" y="164" width="84" height="18" rx="9" fill="#f2dfcb" />
+  <rect x="504" y="196" width="62" height="18" rx="9" fill="#f2dfcb" opacity="0.8" />
+  <circle cx="614" cy="370" r="18" fill="#7ea17f" opacity="0.82" />
+  <text x="144" y="430" font-family="Segoe UI, Arial, sans-serif" font-size="36" fill="#5d4a38" font-weight="700">White Melamine Offcut Pack</text>
+  <text x="144" y="466" font-family="Segoe UI, Arial, sans-serif" font-size="22" fill="#7d6b59">Starter pieces for repairs, mockups, shelves, and practice cuts.</text>
+</svg>
